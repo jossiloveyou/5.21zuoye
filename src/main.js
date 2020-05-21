@@ -38,6 +38,17 @@ const routes = [
     //   }
     // ]
   },
+  { 
+    path:'/', 
+    component: Login,
+    // children:[
+    //   {
+    //     path:"/login/:cid",
+    //     component:ZII,
+    //     props:true
+    //   }
+    // ]
+  },
 ]
 
 const router = new VueRouter({
