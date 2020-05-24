@@ -4,15 +4,18 @@
       密码：<input type="password" v-model="users.pwd">
       <button @click="deng">登录</button>
       {{islogin}}
+
+      {{name}}---{{indexName}}---{{age}}
+      <button @click="bian">改变</button>
+      {{data}}
     </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
   export default {
     // props:['cid'],
     data () {
       return {
-        // name:'',
+        // name:'首页',
         id:'',
         users: {
           username:'',
@@ -29,12 +32,17 @@ import { mapState, mapActions } from 'vuex'
       //   this.$router.push('/login/1')
       // }
     },
-     computed: mapState({
-      sex () {
-        return 111
-      },
-      ...mapState(['name','age','count','islogin'])
-    }),
+    //  computed: mapState({
+    //   sex () {
+    //     return 111
+    //   },
+    //   ...mapState('Login',['name']),
+    //   ...mapState({
+    //     indexName: 'name',
+    //   }),
+    //   ...mapState(['age','islogin']),
+    //   ...mapState('Login',['data']),
+    // }),
     // computed: mapState({
     //   sex: state => state.name,
     //   name1:'name',//取别名
@@ -46,16 +54,26 @@ import { mapState, mapActions } from 'vuex'
       // onclick () {
       //   this.$store.dispatch('FETCT_ACTIONS',true);
       // },
-      ondel () {
-        if(this.count === 0) return
-        this.$store.commit('FECH_COUNT',false);
-      },
+      // ondel () {
+      //   if(this.count === 0) return
+      //   this.$store.commit('FECH_COUNT',false);
+      // },
       deng () {
         this.$store.dispatch('FETCT_LOGIN',this.users)
       },
-      ...mapActions([
-        'FETCT_ACTIONS',
-      ])
+      // bian () {
+      //   this['FECH_DATA']()
+      // },
+      // ...mapActions([
+      //   'FETCT_ACTIONS',
+      // ]),
+      // ...mapActions('Login',[
+      //   'FECH_DATA'
+      // ]),
+      // ...mapMutations('Login',[
+      //   'FECH_NAME',
+      //   // 'FECH_DATA',
+      // ])
     },
     watch: {
       islogin (islogin) {

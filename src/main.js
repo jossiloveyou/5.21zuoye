@@ -2,15 +2,20 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import VueRouter from 'vue-router'
+
+import ElementUI  from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+
 import App from './App'
 // import router from './router'
-import store from './store'
+import store from './store/index'
 import Home from './pages/home/index'
 // import ZI from './pages/home/ZI'
 // import ZII from './pages/login/ZII'
 import Login from './pages/login/index'
 
 Vue.use(VueRouter);
+Vue.use(ElementUI);
 Vue.use(Vuex);
 
 const routes = [
